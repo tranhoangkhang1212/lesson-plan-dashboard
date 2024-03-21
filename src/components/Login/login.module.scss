@@ -34,3 +34,9 @@
         color: rgb(117 118 119);
     }
 }
+
+@media only screen and (max-width: $sm) {
+    .container {
+        min-width: 80vw;
+    }
+}

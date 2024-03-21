@@ -1,12 +1,11 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import { RouterProvider } from 'react-router-dom';
 
-import Home from '@/pages';
-import Error from '@/pages/error';
-import Login from '@/pages/Login';
+import Loading from '@/components/Loading';
 import { PageWithoutLayout } from '@/routes/ExceptionRoutes';
 
 import Layout from '..';
+import { router } from './Routes';
 
 const AppRouter = () => {
     const pathname = window.location.pathname;
@@ -16,15 +15,12 @@ const AppRouter = () => {
         !acceptedRoutes.includes(pathname) || PageWithoutLayout.includes(pathname) ? React.Fragment : Layout;
 
     return (
-        <LayoutFragment>
-            <RouterProvider router={router} />
-        </LayoutFragment>
+        <Suspense fallback={<Loading />}>
+            <LayoutFragment>
+                <RouterProvider router={router} />
+            </LayoutFragment>
+        </Suspense>
     );
 };
-
-const router = createBrowserRouter([
-    { path: '/', element: <Home />, errorElement: <Error /> },
-    { path: '/login', element: <Login /> },
-]);
 
 export default AppRouter;

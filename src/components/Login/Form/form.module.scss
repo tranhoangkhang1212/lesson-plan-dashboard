@@ -1,12 +1,14 @@
 .form {
-    flex-basis: 50%;
+    flex-basis: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-    .input {
-        &:first-child {
-            margin-bottom: 42px;
-        }
+.input {
+    &:first-child {
+        margin-bottom: 42px;
     }
-
 }
 
 .submit {
