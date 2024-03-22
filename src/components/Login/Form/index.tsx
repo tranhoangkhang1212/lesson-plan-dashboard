@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Button from '@/components/Button';
 import Input from '@/components/Input';
-import { LoginRequestDto } from '@/interfaces/request/LoginRequestDto';
+import { LoginRequestDto } from '@/interfaces/Request/LoginRequestDto';
 
 import styles from './form.module.scss';
 
