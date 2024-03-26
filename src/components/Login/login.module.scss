@@ -2,7 +2,7 @@
     @include flex-center;
 
     background: white;
-    height: 65%;
+    height: 85%;
     min-width: 500px;
     border-radius: 12px;
     box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.1);
@@ -31,7 +31,7 @@
 
     .desc {
         font-weight: 700;
-        color: rgb(117 118 119);
+        color: $gray;
     }
 }
 

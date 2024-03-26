@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import loginSlice from './slices/login';
+import dashboardSlice from './slices/dashboard';
 
 const rootReducer = combineReducers({
-    login: loginSlice,
+    dashboard: dashboardSlice,
 });
 
 export default rootReducer;
