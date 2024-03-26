@@ -8,7 +8,8 @@
     .head {
         position: sticky;
         top: 0;
-        background-color: white;
+        font-weight: 600;
+        text-transform: uppercase;
     }
 
     .header {
@@ -18,7 +19,7 @@
     .row {
         font-weight: 400;
         background: white;
-        border-top: 1px solid $gray-2;
+        border-top: 1px solid #ccc;
 
         .click {
             cursor: pointer;

@@ -1,9 +1,11 @@
+export type TrainingProgramsStatus = 'Completed' | 'Processing' | 'Rejected';
+
 export interface TrainingProgramsResponseDto {
     id: number;
     name: string;
     createdAt: Date;
     createdBy: string;
     duration: number;
-    status: string;
+    status: TrainingProgramsStatus;
     rating: number;
 }

@@ -2,40 +2,13 @@ import { ColumnDef } from '@tanstack/react-table';
 import { useMemo } from 'react';
 
 import { TrainingPrograms as Icon } from '@/components/Icons';
+import Status, { StatusType } from '@/components/Status';
 import { Table } from '@/components/Table';
-import { TrainingProgramsResponseDto } from '@/interfaces/Response/TrainingProgramsResponseDto';
+import { TrainingProgramsResponseDto, TrainingProgramsStatus } from '@/interfaces/Response/TrainingProgramsResponseDto';
+import { trainingPrograms } from '@/mocks/training-programs';
 
 import styles from './training-programs.module.scss';
 
-const response: TrainingProgramsResponseDto[] = [
-    {
-        id: 0,
-        name: '1',
-        createdAt: new Date(),
-        createdBy: '',
-        duration: 0,
-        status: '',
-        rating: 0,
-    },
-    {
-        id: 1,
-        name: '2',
-        createdAt: new Date(),
-        createdBy: '',
-        duration: 0,
-        status: '',
-        rating: 0,
-    },
-    {
-        id: 2,
-        name: '3',
-        createdAt: new Date(),
-        createdBy: '',
-        duration: 0,
-        status: '',
-        rating: 0,
-    },
-];
 const TrainingPrograms = () => {
     const cols = useMemo<ColumnDef<TrainingProgramsResponseDto>[]>(
         () => [
@@ -43,11 +16,29 @@ const TrainingPrograms = () => {
             { header: 'Name', accessorKey: 'name' },
             { header: 'Created At', accessorKey: 'createdAt' },
             { header: 'Created By', accessorKey: 'createdBy' },
-            { header: 'Status', accessorKey: 'status' },
+            {
+                header: 'Status',
+                accessorKey: 'status',
+                cell: (value) => (
+                    <div className={styles.status}>
+                        <Status type={getStatusType(value.row.original.status)} text={value.getValue() as string} />
+                    </div>
+                ),
+            },
             { header: 'Rating', accessorKey: 'rating' },
         ],
         [],
     );
+
+    const getStatusType = (status: TrainingProgramsStatus): StatusType => {
+        if (status === 'Processing') {
+            return 'processing';
+        }
+        if (status === 'Rejected') {
+            return 'canceled';
+        }
+        return 'success';
+    };
 
     return (
         <div className={styles.container}>
@@ -56,7 +47,7 @@ const TrainingPrograms = () => {
                 <span>Training programs</span>
             </div>
             <div className={styles.table}>
-                <Table data={response} columns={cols} pageSize={10} pageCount={50} fetchData={() => {}} />
+                <Table data={trainingPrograms} columns={cols} pageSize={10} pageCount={50} fetchData={() => {}} />
             </div>
         </div>
     );
