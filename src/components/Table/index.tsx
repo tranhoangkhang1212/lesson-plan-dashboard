@@ -141,8 +141,8 @@ interface RowCenterProps {
 
 export const RowCenter: React.FC<RowCenterProps> = (props) => {
     return (
-        <tr className="relative">
-            <td className="absolute flex-col -translate-x-1/2 flex-center left-1/2 top-6">{props.children}</td>
+        <tr className={styles['row-center']}>
+            <td>{props.children}</td>
         </tr>
     );
 };

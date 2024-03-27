@@ -68,3 +68,17 @@
         pointer-events: none;
     }
 }
+
+.row-center {
+    position: relative;
+    height: 200px;
+
+    td {
+        @include flex-center;
+        flex-direction: column;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
+    }
+}

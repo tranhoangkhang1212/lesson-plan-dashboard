@@ -31,7 +31,7 @@ module.exports = {
         'plugin:jsx-a11y/recommended',
         'plugin:prettier/recommended',
     ],
-    plugins: ['simple-import-sort', 'prettier'],
+    plugins: ['simple-import-sort', 'prettier', 'eslint-plugin-unused-imports'],
     rules: {
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
         'react/react-in-jsx-scope': 'off',
@@ -46,6 +46,16 @@ module.exports = {
                 components: ['Link'],
                 specialLink: ['hrefLeft', 'hrefRight'],
                 aspects: ['invalidHref', 'preferButton'],
+            },
+        ],
+        'unused-imports/no-unused-imports': 'error',
+        'unused-imports/no-unused-vars': [
+            'warn',
+            {
+                vars: 'all',
+                varsIgnorePattern: '^_',
+                args: 'after-used',
+                argsIgnorePattern: '^_',
             },
         ],
     },

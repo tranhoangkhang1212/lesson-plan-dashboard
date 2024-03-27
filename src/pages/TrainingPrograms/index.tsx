@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import { TrainingPrograms as Icon } from '@/components/Icons';
 import Status, { StatusType } from '@/components/Status';
-import { Table } from '@/components/Table';
+import TableDataList from '@/components/TableDataList';
 import { TrainingProgramsResponseDto, TrainingProgramsStatus } from '@/interfaces/Response/TrainingProgramsResponseDto';
 import { trainingPrograms } from '@/mocks/training-programs';
 
@@ -47,7 +47,7 @@ const TrainingPrograms = () => {
                 <span>Training programs</span>
             </div>
             <div className={styles.table}>
-                <Table data={trainingPrograms} columns={cols} pageSize={10} pageCount={50} fetchData={() => {}} />
+                <TableDataList cols={cols} path="/example" mockData={trainingPrograms} />
             </div>
         </div>
     );

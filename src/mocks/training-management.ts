@@ -1,0 +1,58 @@
+import { TrainingManagementResponseDto } from '@/interfaces/Response/TrainerManagementResponseDto';
+
+export const trainingManagement: TrainingManagementResponseDto[] = [
+    {
+        id: 0,
+        firstName: 'First',
+        lastName: 'Last',
+        phone: '0999 99 99 99',
+        address: 'Ho Chi Minh City',
+        dob: '19/09/1999',
+        status: 'Active',
+    },
+    {
+        id: 1,
+        firstName: 'First',
+        lastName: 'Last',
+        phone: '0999 99 99 99',
+        address: 'Ho Chi Minh City',
+        dob: '19/09/1999',
+        status: 'Active',
+    },
+    {
+        id: 2,
+        firstName: 'First',
+        lastName: 'Last',
+        phone: '0999 99 99 99',
+        address: 'Ho Chi Minh City',
+        dob: '19/09/1999',
+        status: 'Active',
+    },
+    {
+        id: 3,
+        firstName: 'First',
+        lastName: 'Last',
+        phone: '0999 99 99 99',
+        address: 'Ho Chi Minh City',
+        dob: '19/09/1999',
+        status: 'Active',
+    },
+    {
+        id: 4,
+        firstName: 'First',
+        lastName: 'Last',
+        phone: '0999 99 99 99',
+        address: 'Ho Chi Minh City',
+        dob: '19/09/1999',
+        status: 'Active',
+    },
+    {
+        id: 5,
+        firstName: 'First',
+        lastName: 'Last',
+        phone: '0999 99 99 99',
+        address: 'Ho Chi Minh City',
+        dob: '19/09/1999',
+        status: 'Active',
+    },
+];
