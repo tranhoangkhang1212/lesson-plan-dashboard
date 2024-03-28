@@ -1,6 +1,6 @@
 export type TrainerManagementStatus = 'Active';
 
-export interface TrainerManagementResponseDto {
+export interface UserManagementResponseDto {
     id: number;
     firstName: string;
     lastName: string;

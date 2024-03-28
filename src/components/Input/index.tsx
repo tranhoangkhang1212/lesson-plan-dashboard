@@ -10,10 +10,11 @@ interface IInputProps extends HTMLProps<HTMLInputElement> {
     className?: string;
     error?: FieldError;
     required?: boolean;
+    handleChange?: (name: string, value: unknown) => void;
 }
 
 const Input = (props: IInputProps, ref: ForwardedRef<HTMLInputElement>) => {
-    const { className, label, type, required, error } = props;
+    const { className, label, type, required, error, name, handleChange } = props;
 
     const id = useId();
 
@@ -31,8 +32,12 @@ const Input = (props: IInputProps, ref: ForwardedRef<HTMLInputElement>) => {
                 ref={ref}
                 {...props}
                 id={id}
-                className={clsx(styles.input, { [styles.required]: error?.type === 'required' })}
+                className={clsx(styles.input, {
+                    [styles.required]: error?.type === 'required',
+                    [styles.disabled]: props.disabled,
+                })}
                 type={type}
+                onChange={(e) => handleChange && name && handleChange(name, e.target.value)}
             />
             {hasError() && <span className={styles.error}>{error?.message}</span>}
         </div>

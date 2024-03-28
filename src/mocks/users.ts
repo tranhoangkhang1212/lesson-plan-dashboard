@@ -1,6 +1,6 @@
-import { TrainingManagementResponseDto } from '@/interfaces/Response/TrainerManagementResponseDto';
+import { UserManagementResponseDto } from '@/interfaces/Response/UserManagementResponseDto';
 
-export const trainingManagement: TrainingManagementResponseDto[] = [
+export const users: UserManagementResponseDto[] = [
     {
         id: 0,
         firstName: 'First',
@@ -9,6 +9,7 @@ export const trainingManagement: TrainingManagementResponseDto[] = [
         address: 'Ho Chi Minh City',
         dob: '19/09/1999',
         status: 'Active',
+        email: 'example@gmail.com',
     },
     {
         id: 1,
@@ -18,6 +19,7 @@ export const trainingManagement: TrainingManagementResponseDto[] = [
         address: 'Ho Chi Minh City',
         dob: '19/09/1999',
         status: 'Active',
+        email: 'example@gmail.com',
     },
     {
         id: 2,
@@ -27,6 +29,7 @@ export const trainingManagement: TrainingManagementResponseDto[] = [
         address: 'Ho Chi Minh City',
         dob: '19/09/1999',
         status: 'Active',
+        email: 'example@gmail.com',
     },
     {
         id: 3,
@@ -36,6 +39,7 @@ export const trainingManagement: TrainingManagementResponseDto[] = [
         address: 'Ho Chi Minh City',
         dob: '19/09/1999',
         status: 'Active',
+        email: 'example@gmail.com',
     },
     {
         id: 4,
@@ -45,6 +49,7 @@ export const trainingManagement: TrainingManagementResponseDto[] = [
         address: 'Ho Chi Minh City',
         dob: '19/09/1999',
         status: 'Active',
+        email: 'example@gmail.com',
     },
     {
         id: 5,
@@ -54,5 +59,6 @@ export const trainingManagement: TrainingManagementResponseDto[] = [
         address: 'Ho Chi Minh City',
         dob: '19/09/1999',
         status: 'Active',
+        email: 'example@gmail.com',
     },
 ];

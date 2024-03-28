@@ -5,15 +5,15 @@ import Status, { StatusType } from '@/components/Status';
 import TableAction from '@/components/TableAction';
 import TableDataList from '@/components/TableDataList';
 import {
-    TrainerManagementResponseDto,
     TrainerManagementStatus,
-} from '@/interfaces/Response/TrainerManagementResponseDto';
-import { trainingManagement } from '@/mocks/training-management';
+    UserManagementResponseDto,
+} from '@/interfaces/Response/UserManagementResponseDto';
+import { users } from '@/mocks/users';
 
 import styles from './customer-management.module.scss';
 
 const CustomerManagement = () => {
-    const cols = useMemo<ColumnDef<TrainerManagementResponseDto>[]>(
+    const cols = useMemo<ColumnDef<UserManagementResponseDto>[]>(
         () => [
             { header: 'ID', accessorKey: 'id' },
             { header: 'FirstName', accessorKey: 'firstName' },
@@ -69,7 +69,7 @@ const CustomerManagement = () => {
                 <span>Customer management</span>
             </div>
             <div className={styles.table}>
-                <TableDataList cols={cols} path="/example" mockData={trainingManagement} />
+                <TableDataList cols={cols} path="/example" mockData={users} />
             </div>
         </div>
     );
