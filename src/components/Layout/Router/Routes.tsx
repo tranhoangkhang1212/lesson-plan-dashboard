@@ -14,7 +14,7 @@ import { AppRouter, RouterGroup } from '@/constants/routes';
 
 const Error = lazy(() => import('@/pages/Error'));
 const Home = lazy(() => import('@/pages/index'));
-const Login = lazy(() => import('@/pages/Login'));
+const Login = lazy(() => import('@/pages/SignIn'));
 const Dashboard = lazy(() => import('@/pages/Dashboard'));
 const TrainingPrograms = lazy(() => import('@/pages/TrainingPrograms'));
 const CustomerManagement = lazy(() => import('@/pages/CustomerManagement'));
@@ -23,13 +23,14 @@ const StaffManagement = lazy(() => import('@/pages/StaffManagement'));
 const CustomerDetail = lazy(() => import('@/pages/Customer'));
 const TrainerDetail = lazy(() => import('@/pages/Trainer'));
 const StaffDetail = lazy(() => import('@/pages/Staff'));
+const TrainingProgramDetail = lazy(() => import('@/pages/TrainingProgramDetail'));
 const Profile = lazy(() => import('@/pages/Profile'));
 const Settings = lazy(() => import('@/pages/Settings'));
 const Logout = lazy(() => import('@/pages/Logout'));
 
 export const routes: AppRouter[] = [
     { path: '/', element: <Home />, errorElement: <Error />, hidden: true, group: RouterGroup.management },
-    { path: '/login', element: <Login />, hidden: true, group: RouterGroup.management },
+    { path: '/sign-in', element: <Login />, hidden: true, group: RouterGroup.management },
     {
         path: '/dashboard',
         element: <Dashboard />,
@@ -64,6 +65,12 @@ export const routes: AppRouter[] = [
         label: 'Staffs',
         icon: <Staff />,
         group: RouterGroup.management,
+    },
+    {
+        path: '/training-program',
+        element: <TrainingProgramDetail />,
+        group: RouterGroup.management,
+        hidden: true,
     },
     { path: '/customer', element: <CustomerDetail />, hidden: true, group: RouterGroup.management },
     { path: '/trainer', element: <TrainerDetail />, hidden: true, group: RouterGroup.management },

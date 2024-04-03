@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { PaginationRequest } from '@/interfaces/Request/PaginationRequestDto';
-import { PaginationResponse } from '@/interfaces/Response/PaginationResponseDto';
+import { BaseResponseDto } from '@/interfaces/Response/BaseResponseDto';
 import { executeGetWithPagination } from '@/utils/http-client';
 
 import LoadingOverlay from '../Loading/LoadingOverlay';
@@ -28,12 +28,12 @@ const TableDataList = <T extends object>(props: TableDataListProps<T>) => {
 
         try {
             // setIsLoading(true);
-            const { data }: { data: PaginationResponse<T> } = await executeGetWithPagination(path, {
-                page: pagination.page,
+            const { data }: { data: BaseResponseDto<T[]> } = await executeGetWithPagination(path, {
+                pageIndex: pagination.pageIndex,
                 pageSize,
             });
-            setDataRendering(data.rows);
-            setTotalPage(data.totalPage);
+            setDataRendering(data.data);
+            // setTotalPage(data.totalPage);
         } catch (error) {
             toast.error((error as Error).message);
         } finally {

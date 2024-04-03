@@ -1,5 +1,7 @@
 import { FC, ReactNode } from 'react';
 
+import { getValue } from '@/utils/application';
+
 import Header from './Header';
 import styles from './layout.module.scss';
 import Sidebar from './Sidebar';
@@ -10,6 +12,12 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = (props) => {
     const { children } = props;
+
+    const token = getValue('token');
+    if (!token) {
+        window.location.pathname = '/sign-in';
+        return <></>;
+    }
 
     return (
         <div className={styles.container}>
