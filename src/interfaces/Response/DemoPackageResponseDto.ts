@@ -1,10 +1,10 @@
 export interface DemoPackageResponseDto {
     id: number;
-    branch: string;
+    packageName: string;
     descriptions: string;
     numberOfDays: number;
     numberOfSessions: number;
-    packageName: string;
     packagePrice: number;
     type: string;
+    branch: string;
 }

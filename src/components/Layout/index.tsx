@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 import { getValue } from '@/utils/application';
 
@@ -21,6 +22,7 @@ const Layout: FC<LayoutProps> = (props) => {
 
     return (
         <div className={styles.container}>
+            <Toaster />
             <Sidebar className={styles.sidebar} />
             <div className={styles['main-viewport']}>
                 <Header className={styles.header} />

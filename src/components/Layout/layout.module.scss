@@ -13,4 +13,6 @@
 .children {
     flex: 1 1 80%;
     max-width: 80vw;
+    max-height: 88vh;
+    overflow: auto;
 }

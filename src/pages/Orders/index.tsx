@@ -8,9 +8,9 @@ import { UserAccountStatus } from '@/constants/users';
 import { UserManagementResponseDto } from '@/interfaces/Response/UserManagementResponseDto';
 import { users } from '@/mocks/users';
 
-import styles from './staff-management.module.scss';
+import styles from './orders.module.scss';
 
-const TrainerManagement = () => {
+const Orders = () => {
     const cols = useMemo<ColumnDef<UserManagementResponseDto>[]>(
         () => [
             { header: 'ID', accessorKey: 'id' },
@@ -57,7 +57,6 @@ const TrainerManagement = () => {
 
     const getStatusType = (status: UserAccountStatus): StatusType => {
         console.log(status);
-
         return 'success';
     };
 
@@ -73,4 +72,4 @@ const TrainerManagement = () => {
     );
 };
 
-export default TrainerManagement;
+export default Orders;

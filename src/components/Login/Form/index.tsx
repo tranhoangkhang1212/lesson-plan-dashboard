@@ -27,7 +27,7 @@ const LoginForm: FC<LoginFormProps> = (props) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-            <div>
+            <div className={styles.inputs}>
                 <Input
                     className={styles.input}
                     label="UserName"

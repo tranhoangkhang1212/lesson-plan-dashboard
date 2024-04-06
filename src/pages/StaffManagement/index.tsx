@@ -4,10 +4,8 @@ import { useMemo } from 'react';
 import Status, { StatusType } from '@/components/Status';
 import TableAction from '@/components/TableAction';
 import TableDataList from '@/components/TableDataList';
-import {
-    TrainerManagementStatus,
-    UserManagementResponseDto,
-} from '@/interfaces/Response/UserManagementResponseDto';
+import { UserAccountStatus } from '@/constants/users';
+import { UserManagementResponseDto } from '@/interfaces/Response/UserManagementResponseDto';
 import { users } from '@/mocks/users';
 
 import styles from './staff-management.module.scss';
@@ -57,9 +55,8 @@ const StaffManagement = () => {
         console.log('Delete clicked');
     };
 
-    const getStatusType = (status: TrainerManagementStatus): StatusType => {
+    const getStatusType = (status: UserAccountStatus): StatusType => {
         console.log(status);
-
         return 'success';
     };
 

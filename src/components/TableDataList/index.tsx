@@ -6,7 +6,6 @@ import { PaginationRequest } from '@/interfaces/Request/PaginationRequestDto';
 import { BaseResponseDto } from '@/interfaces/Response/BaseResponseDto';
 import { executeGetWithPagination } from '@/utils/http-client';
 
-import LoadingOverlay from '../Loading/LoadingOverlay';
 import { Table } from '../Table';
 
 interface TableDataListProps<T> {
@@ -20,20 +19,18 @@ const TableDataList = <T extends object>(props: TableDataListProps<T>) => {
     const { cols, path, pageSize = 10, mockData } = props;
 
     const [isLoading, setIsLoading] = useState(false);
-    const [totalPage, setTotalPage] = useState(20);
     const [dataRendering, setDataRendering] = useState<T[]>([]);
 
     const fetchData = useCallback(async (pagination: PaginationRequest) => {
         setDataRendering(mockData ?? []);
 
         try {
-            // setIsLoading(true);
+            setIsLoading(true);
             const { data }: { data: BaseResponseDto<T[]> } = await executeGetWithPagination(path, {
                 pageIndex: pagination.pageIndex,
                 pageSize,
             });
             setDataRendering(data.data);
-            // setTotalPage(data.totalPage);
         } catch (error) {
             toast.error((error as Error).message);
         } finally {
@@ -41,12 +38,8 @@ const TableDataList = <T extends object>(props: TableDataListProps<T>) => {
         }
     }, []);
 
-    if (isLoading) {
-        return <LoadingOverlay />;
-    }
-
     return (
-        <Table<T> data={dataRendering} columns={cols} pageSize={pageSize} pageCount={totalPage} fetchData={fetchData} />
+        <Table<T> data={dataRendering} columns={cols} pageSize={pageSize} fetchData={fetchData} loading={isLoading} />
     );
 };
 

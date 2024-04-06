@@ -1,14 +1,14 @@
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import DefaultAvatar from '~/images/default-avatar.png';
+import profile from '~/images/profile.png';
 
 import styles from './profile.module.scss';
 
 const Profile = () => {
     return (
         <div className={styles.container}>
-            <img src={DefaultAvatar} alt="Avatar" />
+            <img src={profile} alt="Avatar" />
             <div className={styles.info}>
                 <div className={styles.content}>
                     <h3>Tran Khang</h3>
