@@ -9,7 +9,7 @@ import Input from '@/components/Input';
 import Loader from '@/components/Loading/Loader';
 import Select, { Option } from '@/components/Select';
 import Textarea from '@/components/Textarea';
-import { CreatePackageRequestDto, defaultRequest } from '@/interfaces/RequestInterface/CreatePackageRequestDto';
+import { CreatePackageRequestDto, defaultRequest } from '@/interfaces/Request/CreatePackageRequestDto';
 import { BaseResponseDto } from '@/interfaces/Response/BaseResponseDto';
 import { BranchResponseDto } from '@/interfaces/Response/BranchResponseDto';
 import { executeGetWithPagination, executePostWithBody } from '@/utils/http-client';
