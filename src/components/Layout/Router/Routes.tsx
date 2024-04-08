@@ -13,7 +13,7 @@ import {
 } from '@/components/Icons';
 import { AppRouter, RouterGroup } from '@/constants/routes';
 
-const Error = lazy(() => import('@/pages/Error'));
+const Error = lazy(() => import('@/pages/ErrorPage'));
 const Home = lazy(() => import('@/pages/index'));
 const Login = lazy(() => import('@/pages/SignIn'));
 const Dashboard = lazy(() => import('@/pages/Dashboard'));
