@@ -10,14 +10,14 @@ interface TableActionProps {
     onDeleteClick: () => void;
 }
 
-const TableAction: FC<TableActionProps> = () => {
+const TableAction: FC<TableActionProps> = ({ onViewClick, onEditClick, onDeleteClick }) => {
     return (
         <div className={styles.container}>
-            <FontAwesomeIcon icon={faEye} className={styles.view} />
+            <FontAwesomeIcon icon={faEye} className={styles.view} onClick={onViewClick} />
             <span>|</span>
-            <FontAwesomeIcon icon={faPenToSquare} className={styles.edit} />
+            <FontAwesomeIcon icon={faPenToSquare} className={styles.edit} onClick={onEditClick} />
             <span>|</span>
-            <FontAwesomeIcon icon={faTrashCan} className={styles.delete} />
+            <FontAwesomeIcon icon={faTrashCan} className={styles.delete} onClick={onDeleteClick} />
         </div>
     );
 };
