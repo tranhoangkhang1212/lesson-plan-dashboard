@@ -42,7 +42,7 @@ const Packages = () => {
     };
 
     return (
-        <div className={styles.container}>
+        <>
             <div className={styles.header}>
                 <div className={styles.title}>
                     <TrainingPrograms />
@@ -59,7 +59,7 @@ const Packages = () => {
             <div className={styles.table}>
                 <TableDataList cols={cols} path="/api/DemoPackage" />
             </div>
-        </div>
+        </>
     );
 };
 

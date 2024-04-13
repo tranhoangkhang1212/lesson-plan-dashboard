@@ -61,14 +61,14 @@ const Orders = () => {
     };
 
     return (
-        <div className={styles.container}>
+        <>
             <div className={styles.header}>
                 <span>Staff management</span>
             </div>
             <div className={styles.table}>
                 <TableDataList cols={cols} path="/example" mockData={users} />
             </div>
-        </div>
+        </>
     );
 };
 

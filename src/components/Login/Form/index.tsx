@@ -10,10 +10,11 @@ import styles from './form.module.scss';
 
 interface LoginFormProps {
     handleLogin: (request: LoginRequestDto) => void;
+    loading: boolean;
 }
 
 const LoginForm: FC<LoginFormProps> = (props) => {
-    const { handleLogin } = props;
+    const { handleLogin, loading } = props;
 
     const {
         register,
@@ -45,7 +46,7 @@ const LoginForm: FC<LoginFormProps> = (props) => {
                 />
             </div>
             <div className={styles.submit}>
-                <Button content="Sign in" className={styles.button} type="submit" />
+                <Button content="Sign in" className={styles.button} type="submit" loading={loading} />
                 <div className={styles.register}>
                     <span className={styles.text}>{`Don't have an account?`}</span>
                     <Link to={''} className={styles.link}>

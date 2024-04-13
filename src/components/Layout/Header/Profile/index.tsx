@@ -1,11 +1,15 @@
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useToggle } from 'react-use';
 
 import profile from '~/images/profile.png';
 
+import Dropdown from '../Dropdown';
 import styles from './profile.module.scss';
 
 const Profile = () => {
+    const [isShowDropDown, toggleShowDropdown] = useToggle(false);
+
     return (
         <div className={styles.container}>
             <img src={profile} alt="Avatar" />
@@ -15,9 +19,10 @@ const Profile = () => {
                     <span>Admin</span>
                 </div>
             </div>
-            <div className={styles.down}>
+            <button className={styles.down} onClick={toggleShowDropdown}>
                 <FontAwesomeIcon icon={faAngleDown} />
-            </div>
+            </button>
+            <Dropdown isShow={isShowDropDown} />
         </div>
     );
 };
